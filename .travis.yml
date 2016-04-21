@@ -1,0 +1,18 @@
+sudo: false
+
+language: clojure
+
+jdk:
+  - oraclejdk8
+
+services:
+  - redis-server
+  - rabbitmq
+
+before_script:
+  - wget http://guest:guest@localhost:15672/cli/rabbitmqadmin
+  - chmod +x rabbitmqadmin
+  - ./rabbitmqadmin declare exchange name=domain_events type=topic
+  - cp resources/config/config_shared_infrastructure-sample.clj config_shared_infrastructure.clj
+
+script: lein test
