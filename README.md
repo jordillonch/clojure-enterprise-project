@@ -1,5 +1,6 @@
 # Example of a Clojure enterprise project
 
+[![Build Status](https://travis-ci.org/jordillonch/clojure-enterprise-project.svg?branch=master)](https://travis-ci.org/jordillonch/clojure-enterprise-project)
 
 ## Installation
 
